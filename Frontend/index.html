@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pico y Placa Colombia</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Pico y Placa 🚗</h1>
+
+      <label>Ciudad</label>
+      <select id="citySelect"></select>
+
+      <label>Fecha</label>
+      <input type="date" id="dateInput" />
+
+      <button onclick="consultar()">Consultar</button>
+
+      <div id="result" class="card hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
