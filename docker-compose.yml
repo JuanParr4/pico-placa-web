@@ -5,9 +5,13 @@ services:
     container_name: pico-placa-frontend
     ports:
       - "3004:80"
-backend:
+  backend:
     build:
       context: ./Backend
     container_name: pico-placa-backend
     ports:
       - "3504"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - frontend
