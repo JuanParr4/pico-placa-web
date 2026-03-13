@@ -4,4 +4,10 @@ services:
       context: ./Frontend
     container_name: pico-placa-frontend
     ports:
-      - "8080:80"
+      - "3004:80"
+backend:
+    build:
+      context: ./Backend
+    container_name: pico-placa-backend
+    ports:
+      - "3504"
