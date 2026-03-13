@@ -1,7 +1,0 @@
-services:
-  frontend:
-    build:
-      context: ./Frontend
-    container_name: pico-placa-frontend
-    ports:
-      - "8080:80"
