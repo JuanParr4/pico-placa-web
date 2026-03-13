@@ -10,7 +10,7 @@ services:
       context: ./Backend
     container_name: pico-placa-backend
     ports:
-      - "3504"
+      - "3504:3000"
     environment:
       - NODE_ENV=production
     depends_on:
