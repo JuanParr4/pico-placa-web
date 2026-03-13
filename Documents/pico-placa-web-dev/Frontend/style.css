@@ -1,0 +1,147 @@
+:root {
+  --primary-color: #4e73df;
+  --primary-hover: #2e59d9;
+  --bg-gradient-1: #4e73df;
+  --bg-gradient-2: #1cc88a;
+  --text-color: #333333;
+  --bg-card: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, var(--bg-gradient-1), var(--bg-gradient-2));
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px; /* Margen para celulares */
+}
+
+.container {
+  background: var(--bg-card);
+  padding: 30px 25px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+select, input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d3e2;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+  background-color: #f8f9fc;
+}
+
+select:focus, input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: #fff;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+button:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background: #a8b8e6;
+  cursor: not-allowed;
+}
+
+.card {
+  margin-top: 25px;
+  padding: 20px;
+  background: #f8f9fc;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 8px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.card h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e3e6f0;
+  padding-bottom: 5px;
+}
+
+.card p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.badge {
+  display: inline-block;
+  background: #e74a3b;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
