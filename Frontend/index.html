@@ -1,24 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pico y Placa Colombia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Pico y Placa 🚗</h1>
+    <main class="container">
+      <header>
+        <h1>Pico y Placa 🚗</h1>
+        <p class="subtitle">Consulta las restricciones de movilidad</p>
+      </header>
 
-      <label>Ciudad</label>
-      <select id="citySelect"></select>
+      <div class="form-group">
+        <label for="citySelect">Ciudad</label>
+        <select id="citySelect" required>
+          <option value="" disabled selected>Cargando ciudades...</option>
+        </select>
+      </div>
 
-      <label>Fecha</label>
-      <input type="date" id="dateInput" />
+      <div class="form-group">
+        <label for="dateInput">Fecha</label>
+        <input type="date" id="dateInput" required />
+      </div>
 
-      <button onclick="consultar()">Consultar</button>
+      <button id="btnConsultar" onclick="consultar()">Consultar Restricción</button>
 
-      <div id="result" class="card hidden"></div>
-    </div>
+      <section id="result" class="card hidden">
+        </section>
+    </main>
 
     <script src="script.js"></script>
   </body>
