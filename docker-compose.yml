@@ -1,0 +1,48 @@
+services:
+  # 1. FRONTEND: Atiende en el puerto del profe (3003) y en el de la redirección del JS (3004)
+  frontend:
+    build:
+      context: ./Frontend
+    container_name: pico-placa-frontend
+    ports:
+      - "3003:80"  # Puerto oficial solicitado
+      - "3004:80"  # <--- CRÍTICO: Para que window.location.href = ":3004" no falle
+
+  # 2. BACKEND: Atiende en el puerto que el script.js busca (3000)
+  backend:
+    build:
+      context: ./Backend
+    container_name: pico-placa-backend
+    ports:
+      - "3000:3000" # <--- CRÍTICO: Tu script.js hace fetch a :3000/api/cities
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - frontend
+
+  # 3. LOGIN API: Se mantiene en el 3001 como pide el login-script.js
+  login-api:
+    build:
+      context: ./Login
+    container_name: pico-placa-login-nuevo
+    ports:
+      - "3001:3001"
+    depends_on:
+      - postgres-db
+
+  # 4. BASE DE DATOS: Mantenemos tu configuración exacta
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: login-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_DB: Login_db
+    ports:
+      - "5433:5432" # Tu puerto asignado
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  postgres_data:
