@@ -3,7 +3,7 @@
 // ==========================================
 
 //const API_URL = "http://localhost:3001";                 // <-- MODO LOCAL (PC)
-const API_URL = "http://89.117.23.31:3001";                 // <-- MODO SERVIDOR (ACTIVA AHORA)
+const API_URL = "https://ele5-3.apolobyte.top";                 // <-- MODO SERVIDOR (ACTIVA AHORA)
 
 // const REDIRECT_URL = "http://localhost:3003/index.html"; // <-- MODO LOCAL (PC)
 const REDIRECT_URL = "/index.html";                         // <-- MODO SERVIDOR (ACTIVA AHORA)
@@ -19,7 +19,7 @@ e.preventDefault()
 let usuario = document.getElementById("usuario").value
 let password = document.getElementById("password").value
 
-fetch(`${API_URL}/login`,{
+fetch(`${API_URL}/login-api/login`,{
 
 method:"POST",
 
@@ -80,7 +80,7 @@ e.preventDefault()
 let usuario = document.getElementById("usuarioRegistro").value
 let password = document.getElementById("passwordRegistro").value
 
-fetch(`${API_URL}/registro`,{
+fetch(`${API_URL}/login-api/registro`,{
 
 method:"POST",
 

@@ -7,7 +7,7 @@
 //const API_URL = "http://localhost:3000";
 
 // OPClÓN 2: PARA EL SERVIDOR VPS (Usa esto antes de subir a GitHub)
- const API_URL = "http://89.117.23.31:3000";
+ const API_URL = "https://ele5-3.apolobyte.top";
 
 // ==========================================
 
