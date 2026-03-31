@@ -1,15 +1,9 @@
-// ==========================================
-// INTERRUPTOR: MODO LOCAL VS MODO SERVIDOR
-// Deja sin '//' la opción que estés usando.
-// ==========================================
+//Ruta para pruebas locales
+const API_URL = "http://localhost:3000";
 
-// OPClÓN 1: PARA TU COMPUTADORA (Activo ahora mismo)
-//const API_URL = "http://localhost:3000";
+// Ruta para nuestro servidor
+//const API_URL = "https://ele5-3.apolobyte.top";
 
-// OPClÓN 2: PARA EL SERVIDOR VPS (Usa esto antes de subir a GitHub)
- const API_URL = "http://89.117.23.31:3000";
-
-// ==========================================
 
 document.addEventListener("DOMContentLoaded", () => {
   // Cargar fecha actual por defecto al abrir la página

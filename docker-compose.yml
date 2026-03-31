@@ -5,8 +5,7 @@ services:
       context: ./Frontend
     container_name: pico-placa-frontend
     ports:
-      - "3003:80"  # Puerto oficial solicitado
-      - "3004:80"  # <--- CRÍTICO: Para que window.location.href = ":3004" no falle
+      - "3004:80"  # Puerto oficial solicitado
 
   # 2. BACKEND: Atiende en el puerto que el script.js busca (3000)
   backend:
@@ -14,7 +13,7 @@ services:
       context: ./Backend
     container_name: pico-placa-backend
     ports:
-      - "3000:3000" # <--- CRÍTICO: Tu script.js hace fetch a :3000/api/cities
+      - "3000:3000" # script.js hace fetch a :3000/api/cities
     environment:
       - NODE_ENV=production
     depends_on:
@@ -26,11 +25,11 @@ services:
       context: ./Login
     container_name: pico-placa-login-nuevo
     ports:
-      - "3001:3001"
+      - "3005:3001"
     depends_on:
       - postgres-db
 
-  # 4. BASE DE DATOS: Mantenemos tu configuración exacta
+  # 4. BASE DE DATOS: configuracion exacta
   postgres-db:
     image: postgres:15-alpine
     container_name: login-db

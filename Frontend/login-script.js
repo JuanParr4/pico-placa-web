@@ -1,15 +1,10 @@
-// ==========================================
-// RUTA DE LA API (COMENTA LA QUE NO USES CON //)
-// ==========================================
+// Ruta api, desactivamos ruta con //
 
-//const API_URL = "http://localhost:3001";                 // <-- MODO LOCAL (PC)
-const API_URL = "http://89.117.23.31:3001";                 // <-- MODO SERVIDOR (ACTIVA AHORA)
+const API_URL = "http://localhost:3005";                 // Ruta prueba local, activo.
+//const API_URL = "https://ele5-3.apolobyte.top";                 // modo servidor, se debe activar cuando se suba al servidor
 
-// const REDIRECT_URL = "http://localhost:3003/index.html"; // <-- MODO LOCAL (PC)
-const REDIRECT_URL = "/index.html";                         // <-- MODO SERVIDOR (ACTIVA AHORA)
-
-// ==========================================
-
+const REDIRECT_URL = "http://localhost:3004/index.html"; // PRUEBA LOCAL (PC)
+//const REDIRECT_URL = "/index.html";                         
 
 // LOGIN
 document.getElementById("loginForm").addEventListener("submit",function(e){

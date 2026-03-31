@@ -8,7 +8,7 @@ async function cargarCiudades() {
   const select = document.getElementById("citySelect");
   
   try {
-    const res = await fetch("http://localhost:3000/api/cities");
+    const res = await fetch("https://ele5-3.apolobyte.top/api/cities");
     if (!res.ok) throw new Error("Error al cargar ciudades");
     
     const cities = await res.json();
@@ -43,7 +43,7 @@ async function consultar() {
   resultDiv.classList.add("hidden");
 
   try {
-    const res = await fetch(`http://localhost:3000/api/rules?city=${city}&date=${date}`);
+    const res = await fetch(`https://ele5-3.apolobyte.top/api/rules?city=${city}&date=${date}`);
     const data = await res.json();
 
     if (data.error) {
